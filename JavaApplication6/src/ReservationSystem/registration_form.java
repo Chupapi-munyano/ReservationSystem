@@ -143,6 +143,7 @@ public class registration_form extends javax.swing.JFrame {
         jButton3.setText("EXIT");
         getContentPane().add(jButton3);
         jButton3.setBounds(790, 40, 90, 50);
+
         getContentPane().add(jLabel7);
         jLabel7.setBounds(110, 0, 1000, 630);
 

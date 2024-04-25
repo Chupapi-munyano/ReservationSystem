@@ -159,8 +159,8 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        RegistrationFrame registrationFrame = new RegistrationFrame();
-            registrationFrame.setVisible(true);
+        registration_form registration_form = new registration_form();
+            registration_form.setVisible(true);
             dispose();
         
     }//GEN-LAST:event_jButton2ActionPerformed
