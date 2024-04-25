@@ -144,7 +144,6 @@ public class registration_form extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(790, 40, 90, 50);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LOG IN (2).png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(110, 0, 1000, 630);
 
