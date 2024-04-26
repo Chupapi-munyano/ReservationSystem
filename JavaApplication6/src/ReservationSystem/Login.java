@@ -43,9 +43,7 @@ public class Login extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1200, 675));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.setBackground(null);
         jTextField2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jTextField2.setForeground(null);
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setBorder(null);
         jTextField2.setMinimumSize(new java.awt.Dimension(64, 14));
