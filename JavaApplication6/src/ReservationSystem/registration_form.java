@@ -9,14 +9,14 @@ public class registration_form extends javax.swing.JFrame {
      */
     public registration_form() {
         initComponents();
-            passC.addKeyListener(new java.awt.event.KeyAdapter() {
+            passCON.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            PassCONKeyReleased(evt);
+        }
+    });
+             passSTR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-            PassStrgtKeyReleased(evt);
-            }
-        });
-             passS.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-            PassStrgt1KeyReleased(evt);
+            PassSTRKeyReleased(evt);
             }
         });
     }
@@ -31,15 +31,15 @@ public class registration_form extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        PassStrgt = new javax.swing.JLabel();
-        PassStrgt1 = new javax.swing.JLabel();
+        PassSTR = new javax.swing.JLabel();
+        PassCON = new javax.swing.JLabel();
         txt1 = new javax.swing.JTextField();
         txt2 = new javax.swing.JTextField();
         btn_register = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        passC = new javax.swing.JPasswordField();
-        passS = new javax.swing.JPasswordField();
+        passSTR = new javax.swing.JPasswordField();
+        passCON = new javax.swing.JPasswordField();
         label1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -55,20 +55,20 @@ public class registration_form extends javax.swing.JFrame {
         jLabel5.setText("Asher's Diner");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 350, 70));
 
-        PassStrgt.addKeyListener(new java.awt.event.KeyAdapter() {
+        PassSTR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                PassStrgtKeyReleased(evt);
+                PassSTRKeyReleased(evt);
             }
         });
-        getContentPane().add(PassStrgt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 200, 24));
+        getContentPane().add(PassSTR, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 200, 24));
 
-        PassStrgt1.setText("l.m,.ml,");
-        PassStrgt1.addKeyListener(new java.awt.event.KeyAdapter() {
+        PassCON.setText("l.m,.ml,");
+        PassCON.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                PassStrgt1KeyReleased(evt);
+                PassCONKeyReleased(evt);
             }
         });
-        getContentPane().add(PassStrgt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 200, 24));
+        getContentPane().add(PassCON, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 200, 24));
 
         txt1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt1.setBorder(null);
@@ -127,25 +127,25 @@ public class registration_form extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 110, 150, 50));
 
-        passC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        passC.setBorder(null);
-        passC.addActionListener(new java.awt.event.ActionListener() {
+        passSTR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passSTR.setToolTipText("");
+        passSTR.setBorder(null);
+        passSTR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passCActionPerformed(evt);
+                passSTRActionPerformed(evt);
             }
         });
-        getContentPane().add(passC, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 385, 394, 45));
-        passC.getAccessibleContext().setAccessibleDescription("");
+        getContentPane().add(passSTR, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 394, 45));
 
-        passS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        passS.setToolTipText("");
-        passS.setBorder(null);
-        passS.addActionListener(new java.awt.event.ActionListener() {
+        passCON.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passCON.setBorder(null);
+        passCON.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passSActionPerformed(evt);
+                passCONActionPerformed(evt);
             }
         });
-        getContentPane().add(passS, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 394, 45));
+        getContentPane().add(passCON, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 385, 394, 45));
+        passCON.getAccessibleContext().setAccessibleDescription("");
 
         label1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 204, 204));
@@ -168,8 +168,8 @@ public class registration_form extends javax.swing.JFrame {
         // TODO add your handling code here:
         txt1.setText(null);
         txt2.setText(null);
-        passC.setText(null);
-        passS.setText(null);
+        passCON.setText(null);
+        passSTR.setText(null);
         label1.setText(null);
     }//GEN-LAST:event_btn_clearActionPerformed
 
@@ -177,8 +177,8 @@ public class registration_form extends javax.swing.JFrame {
         // TODO add your handling code here:
     String name = txt1.getText();
     String email = txt2.getText();
-    String orgpass = new String(passC.getPassword());
-    String confpass = new String(passS.getPassword());
+    String orgpass = new String(passCON.getPassword());
+    String confpass = new String(passSTR.getPassword());
 
     boolean isValid = true;
     StringBuilder errorMessage = new StringBuilder();
@@ -226,8 +226,8 @@ public class registration_form extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_registerActionPerformed
 
-    private void PassStrgtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassStrgtKeyReleased
-    String password = new String(passS.getPassword());
+    private void PassSTRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassSTRKeyReleased
+    String password = new String(passCON.getPassword());
     int passwordLength = password.length();
     String strength;
     Color color;
@@ -242,14 +242,13 @@ public class registration_form extends javax.swing.JFrame {
         strength = "Weak";
         color = Color.RED; 
     }
-    PassStrgt.setText("Password Strength: " + strength);
-    PassStrgt.setForeground(color);
+    PassSTR.setText("Password Strength: " + strength);
+    PassSTR.setForeground(color);
     
-    }//GEN-LAST:event_PassStrgtKeyReleased
+    }//GEN-LAST:event_PassSTRKeyReleased
 
     private void txt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyReleased
-        // TODO add your handling code here:
-     String name = txt1.getText();
+ String name = txt1.getText();
     StringBuilder capitalized = new StringBuilder();
     boolean capitalizeNext = true;
     for (char c : name.toCharArray()) {
@@ -274,22 +273,30 @@ public class registration_form extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt2ActionPerformed
 
-    private void passSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passSActionPerformed
+    private void passSTRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passSTRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passSActionPerformed
+    }//GEN-LAST:event_passSTRActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void PassStrgt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassStrgt1KeyReleased
-    // String password2 = new String(passC.getPassword());
-        //PassStrgt1.setText(password2);
-    }//GEN-LAST:event_PassStrgt1KeyReleased
+    private void PassCONKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassCONKeyReleased
+    String password1 = new String(passCON.getPassword());
+    String password2 = new String(passSTR.getPassword());
 
-    private void passCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passCActionPerformed
+    if (password1.equals(password2)) {
+        PassCON.setText("Passwords Match");
+        PassCON.setForeground(Color.GREEN);
+    } else {
+        PassCON.setText("Passwords Do Not Match");
+        PassCON.setForeground(Color.RED);
+    }
+    }//GEN-LAST:event_PassCONKeyReleased
 
-    }//GEN-LAST:event_passCActionPerformed
+    private void passCONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passCONActionPerformed
+
+    }//GEN-LAST:event_passCONActionPerformed
 
     /**
      * @param args the command line arguments
@@ -328,8 +335,8 @@ public class registration_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PassStrgt;
-    private javax.swing.JLabel PassStrgt1;
+    private javax.swing.JLabel PassCON;
+    private javax.swing.JLabel PassSTR;
     private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_register;
     private javax.swing.JButton jButton2;
@@ -337,8 +344,8 @@ public class registration_form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel label1;
-    private javax.swing.JPasswordField passC;
-    private javax.swing.JPasswordField passS;
+    private javax.swing.JPasswordField passCON;
+    private javax.swing.JPasswordField passSTR;
     private javax.swing.JTextField txt1;
     private javax.swing.JTextField txt2;
     // End of variables declaration//GEN-END:variables
