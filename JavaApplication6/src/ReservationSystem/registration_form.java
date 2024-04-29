@@ -62,7 +62,6 @@ public class registration_form extends javax.swing.JFrame {
         });
         getContentPane().add(PassSTR, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 200, 24));
 
-        PassCON.setText("l.m,.ml,");
         PassCON.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 PassCONKeyReleased(evt);

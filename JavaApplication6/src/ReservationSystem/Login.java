@@ -137,7 +137,7 @@ public class Login extends javax.swing.JFrame {
         String jTextField2Value = jTextField2.getText();
         String passwordValue = password.getText();
         if (jTextField2Value.equals("Biguletto")&& passwordValue.equals("20231148575")){
-            RegistrationFrame mainMenu = new RegistrationFrame(); // Create an instance of MainMenu
+            revMenu mainMenu = new revMenu(); // Create an instance of MainMenu
         mainMenu.setVisible(true); // 
             
             dispose();

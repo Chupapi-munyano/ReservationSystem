@@ -57,9 +57,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="PassCON">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="l.m,.ml,"/>
-      </Properties>
       <Events>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PassCONKeyReleased"/>
       </Events>
