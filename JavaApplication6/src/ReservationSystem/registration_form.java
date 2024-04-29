@@ -33,8 +33,8 @@ public class registration_form extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         PassSTR = new javax.swing.JLabel();
         PassCON = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
-        txt2 = new javax.swing.JTextField();
+        userEmail = new javax.swing.JTextField();
+        userName = new javax.swing.JTextField();
         btn_register = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -70,29 +70,29 @@ public class registration_form extends javax.swing.JFrame {
         });
         getContentPane().add(PassCON, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 200, 24));
 
-        txt1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt1.setBorder(null);
-        txt1.addActionListener(new java.awt.event.ActionListener() {
+        userEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userEmail.setBorder(null);
+        userEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt1ActionPerformed(evt);
+                userEmailActionPerformed(evt);
             }
         });
-        txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+        userEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt1KeyReleased(evt);
+                userEmailKeyReleased(evt);
             }
         });
-        getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 385, 394, 45));
+        getContentPane().add(userEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 385, 394, 45));
 
-        txt2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt2.setBorder(null);
-        txt2.addActionListener(new java.awt.event.ActionListener() {
+        userName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userName.setBorder(null);
+        userName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt2ActionPerformed(evt);
+                userNameActionPerformed(evt);
             }
         });
-        getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 394, 45));
-        txt2.getAccessibleContext().setAccessibleDescription("");
+        getContentPane().add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 394, 45));
+        userName.getAccessibleContext().setAccessibleDescription("");
 
         btn_register.setBackground(new java.awt.Color(0, 102, 102));
         btn_register.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -166,64 +166,15 @@ public class registration_form extends javax.swing.JFrame {
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
-        txt1.setText(null);
-        txt2.setText(null);
+        userEmail.setText(null);
+        userName.setText(null);
         passCON.setText(null);
         passSTR.setText(null);
         label1.setText(null);
     }//GEN-LAST:event_btn_clearActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-        // TODO add your handling code here:
-    String name = txt1.getText();
-    String email = txt2.getText();
-    String orgpass = new String(passCON.getPassword());
-    String confpass = new String(passSTR.getPassword());
-
-    boolean isValid = true;
-    StringBuilder errorMessage = new StringBuilder();
-
-    if (name.isEmpty() || email.isEmpty() || orgpass.isEmpty() || confpass.isEmpty()) {
-        label1.setForeground(new Color(255, 204, 204)); 
-        label1.setText("Please fill in all fields. Thank you.");
-        return;
-    }
-
-    if (name.matches(".*\\d.*")) {
-        errorMessage.append("Name cannot contain numbers.\n");
-        isValid = false;
-    }
-    if (!name.contains(" ")) {
-        errorMessage.append("Name must contain at least two words separated by a space.\n");
-        isValid = false;
-    }
-    if (!name.matches("[a-zA-Z ]+")) {
-        errorMessage.append("Name can only contain letters and spaces.\n");
-        isValid = false;
-    }
-
-    if (!email.contains("@gmail.com") && !email.contains("@yahoo.com")) {
-        errorMessage.append("Invalid email format. Use Gmail or Yahoo.\n");
-        isValid = false;
-    }
-
-    if (!orgpass.equals(confpass)) {
-        errorMessage.append("Passwords do not match.\n");
-        isValid = false;
-    }
-    if (!orgpass.matches("[a-zA-Z0-9]+")) {
-        errorMessage.append("Password cannot contain special characters.\n");
-        isValid = false;
-    }
-
-    if (!isValid) {
-        label1.setForeground(Color.RED);
-        label1.setText(errorMessage.toString());
-        return;
-        }
-        ReservationFrame f2= new ReservationFrame();
-        f2.show();
-        dispose();
+     
     }//GEN-LAST:event_btn_registerActionPerformed
 
     private void PassSTRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassSTRKeyReleased
@@ -247,8 +198,8 @@ public class registration_form extends javax.swing.JFrame {
     
     }//GEN-LAST:event_PassSTRKeyReleased
 
-    private void txt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyReleased
- String name = txt1.getText();
+    private void userEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userEmailKeyReleased
+ String name = userEmail.getText();
     StringBuilder capitalized = new StringBuilder();
     boolean capitalizeNext = true;
     for (char c : name.toCharArray()) {
@@ -262,16 +213,16 @@ public class registration_form extends javax.swing.JFrame {
             capitalized.append(Character.toLowerCase(c));
         }
     }
-        txt1.setText(capitalized.toString());
-    }//GEN-LAST:event_txt1KeyReleased
+        userEmail.setText(capitalized.toString());
+    }//GEN-LAST:event_userEmailKeyReleased
 
-    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
+    private void userEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt1ActionPerformed
+    }//GEN-LAST:event_userEmailActionPerformed
 
-    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
+    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt2ActionPerformed
+    }//GEN-LAST:event_userNameActionPerformed
 
     private void passSTRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passSTRActionPerformed
         // TODO add your handling code here:
@@ -346,7 +297,7 @@ public class registration_form extends javax.swing.JFrame {
     private javax.swing.JLabel label1;
     private javax.swing.JPasswordField passCON;
     private javax.swing.JPasswordField passSTR;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
+    private javax.swing.JTextField userEmail;
+    private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 }
