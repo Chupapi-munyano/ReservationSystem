@@ -1,5 +1,6 @@
 package ReservationSystem;
 import java.awt.Color;
+import java.awt.Font;
 
 public class registration_form extends javax.swing.JFrame {
 
@@ -8,9 +9,14 @@ public class registration_form extends javax.swing.JFrame {
      */
     public registration_form() {
         initComponents();
-            pass1.addKeyListener(new java.awt.event.KeyAdapter() {
+            passCON.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            PassCONKeyReleased(evt);
+        }
+    });
+             passSTR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-            label2KeyReleased(evt);
+            PassSTRKeyReleased(evt);
             }
         });
     }
@@ -24,51 +30,68 @@ public class registration_form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txt1 = new javax.swing.JTextField();
-        txt2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        PassSTR = new javax.swing.JLabel();
+        PassCON = new javax.swing.JLabel();
+        userEmail = new javax.swing.JTextField();
+        userName = new javax.swing.JTextField();
         btn_register = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        pass1 = new javax.swing.JPasswordField();
-        pass2 = new javax.swing.JPasswordField();
+        passSTR = new javax.swing.JPasswordField();
+        passCON = new javax.swing.JPasswordField();
         label1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        label2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registration Form");
         setBackground(new java.awt.Color(0, 204, 255));
-        setPreferredSize(new java.awt.Dimension(1200, 675));
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 675));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt1.setBorder(null);
-        txt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt1ActionPerformed(evt);
-            }
-        });
-        txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jLabel5.setFont(new java.awt.Font("SimSun-ExtB", 2, 48)); // NOI18N
+        jLabel5.setText("Asher's Diner");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 350, 70));
+
+        PassSTR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt1KeyReleased(evt);
+                PassSTRKeyReleased(evt);
             }
         });
-        getContentPane().add(txt1);
-        txt1.setBounds(260, 380, 300, 30);
+        getContentPane().add(PassSTR, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 200, 24));
 
-        txt2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt2.setBorder(null);
-        txt2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt2ActionPerformed(evt);
+        PassCON.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PassCONKeyReleased(evt);
             }
         });
-        getContentPane().add(txt2);
-        txt2.setBounds(260, 310, 300, 30);
+        getContentPane().add(PassCON, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 200, 24));
+
+        userEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userEmail.setBorder(null);
+        userEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userEmailActionPerformed(evt);
+            }
+        });
+        userEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                userEmailKeyReleased(evt);
+            }
+        });
+        getContentPane().add(userEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 385, 394, 45));
+
+        userName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userName.setBorder(null);
+        userName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userNameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 394, 45));
+        userName.getAccessibleContext().setAccessibleDescription("");
 
         btn_register.setBackground(new java.awt.Color(0, 102, 102));
         btn_register.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -79,8 +102,7 @@ public class registration_form extends javax.swing.JFrame {
                 btn_registerActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_register);
-        btn_register.setBounds(500, 460, 110, 24);
+        getContentPane().add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 150, 50));
 
         btn_clear.setBackground(new java.awt.Color(0, 102, 102));
         btn_clear.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -91,62 +113,51 @@ public class registration_form extends javax.swing.JFrame {
                 btn_clearActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_clear);
-        btn_clear.setBounds(620, 460, 90, 24);
+        getContentPane().add(btn_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 140, 50));
 
         jButton2.setBackground(new java.awt.Color(0, 102, 102));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("LOGIN");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(890, 40, 150, 50);
-
-        pass1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pass1.setBorder(null);
-        pass1.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(pass1);
-        pass1.setBounds(660, 380, 300, 30);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 110, 150, 50));
 
-        pass2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pass2.setToolTipText("");
-        pass2.setBorder(null);
-        pass2.addActionListener(new java.awt.event.ActionListener() {
+        passSTR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passSTR.setToolTipText("");
+        passSTR.setBorder(null);
+        passSTR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pass2ActionPerformed(evt);
+                passSTRActionPerformed(evt);
             }
         });
-        getContentPane().add(pass2);
-        pass2.setBounds(660, 310, 300, 30);
+        getContentPane().add(passSTR, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 394, 45));
+
+        passCON.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passCON.setBorder(null);
+        passCON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passCONActionPerformed(evt);
+            }
+        });
+        getContentPane().add(passCON, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 385, 394, 45));
+        passCON.getAccessibleContext().setAccessibleDescription("");
 
         label1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 204, 204));
-        getContentPane().add(label1);
-        label1.setBounds(240, 501, 745, 30);
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(920, 350, 117, 20);
-
-        label2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                label2KeyReleased(evt);
-            }
-        });
-        getContentPane().add(label2);
-        label2.setBounds(650, 250, 380, 24);
+        getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 501, 745, 30));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 102));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("EXIT");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(790, 40, 90, 50);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, 90, 50));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LOG IN (2).png"))); // NOI18N
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(110, 0, 1000, 630);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regBG.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 675));
 
         pack();
         setLocationRelativeTo(null);
@@ -154,69 +165,19 @@ public class registration_form extends javax.swing.JFrame {
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
-        txt1.setText(null);
-        txt2.setText(null);
-        pass1.setText(null);
-        pass2.setText(null);
+        userEmail.setText(null);
+        userName.setText(null);
+        passCON.setText(null);
+        passSTR.setText(null);
         label1.setText(null);
     }//GEN-LAST:event_btn_clearActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-        // TODO add your handling code here:
-    String name = txt1.getText();
-    String email = txt2.getText();
-    String orgpass = new String(pass1.getPassword());
-    String confpass = new String(pass2.getPassword());
-
-    boolean isValid = true;
-    StringBuilder errorMessage = new StringBuilder();
-
-    if (name.isEmpty() || email.isEmpty() || orgpass.isEmpty() || confpass.isEmpty()) {
-        label1.setForeground(new Color(255, 204, 204)); 
-        label1.setText("Please fill in all fields. Thank you.");
-        return;
-    }
-
-    if (name.matches(".*\\d.*")) {
-        errorMessage.append("Name cannot contain numbers.\n");
-        isValid = false;
-    }
-    if (!name.contains(" ")) {
-        errorMessage.append("Name must contain at least two words separated by a space.\n");
-        isValid = false;
-    }
-    if (!name.matches("[a-zA-Z ]+")) {
-        errorMessage.append("Name can only contain letters and spaces.\n");
-        isValid = false;
-    }
-
-    if (!email.contains("@gmail.com") && !email.contains("@yahoo.com")) {
-        errorMessage.append("Invalid email format. Use Gmail or Yahoo.\n");
-        isValid = false;
-    }
-
-    if (!orgpass.equals(confpass)) {
-        errorMessage.append("Passwords do not match.\n");
-        isValid = false;
-    }
-    if (!orgpass.matches("[a-zA-Z0-9]+")) {
-        errorMessage.append("Password cannot contain special characters.\n");
-        isValid = false;
-    }
-
-    if (!isValid) {
-        label1.setForeground(Color.RED);
-        label1.setText(errorMessage.toString());
-        return;
-        }
-        ReservationFrame f2= new ReservationFrame();
-        f2.show();
-        dispose();
+     
     }//GEN-LAST:event_btn_registerActionPerformed
 
-    private void label2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_label2KeyReleased
-        // TODO add your handling code here:
-    String password = new String(pass1.getPassword());
+    private void PassSTRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassSTRKeyReleased
+    String password = new String(passCON.getPassword());
     int passwordLength = password.length();
     String strength;
     Color color;
@@ -226,18 +187,18 @@ public class registration_form extends javax.swing.JFrame {
         color =new Color(0, 100, 0); 
     } else if (passwordLength >= 8) {
         strength = "Good";
-        color = Color.YELLOW; 
+        color = Color.yellow; 
     } else {
         strength = "Weak";
         color = Color.RED; 
     }
-    label2.setText("Password Strength: " + strength);
-    label2.setForeground(color);
-    }//GEN-LAST:event_label2KeyReleased
+    PassSTR.setText("Password Strength: " + strength);
+    PassSTR.setForeground(color);
+    
+    }//GEN-LAST:event_PassSTRKeyReleased
 
-    private void txt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyReleased
-        // TODO add your handling code here:
-     String name = txt1.getText();
+    private void userEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userEmailKeyReleased
+ String name = userEmail.getText();
     StringBuilder capitalized = new StringBuilder();
     boolean capitalizeNext = true;
     for (char c : name.toCharArray()) {
@@ -251,24 +212,41 @@ public class registration_form extends javax.swing.JFrame {
             capitalized.append(Character.toLowerCase(c));
         }
     }
-        txt1.setText(capitalized.toString());
-    }//GEN-LAST:event_txt1KeyReleased
+        userEmail.setText(capitalized.toString());
+    }//GEN-LAST:event_userEmailKeyReleased
 
-    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
+    private void userEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt1ActionPerformed
+    }//GEN-LAST:event_userEmailActionPerformed
 
-    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
+    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt2ActionPerformed
+    }//GEN-LAST:event_userNameActionPerformed
 
-    private void pass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass1ActionPerformed
+    private void passSTRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passSTRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pass1ActionPerformed
+    }//GEN-LAST:event_passSTRActionPerformed
 
-    private void pass2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pass2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pass2ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void PassCONKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassCONKeyReleased
+    String password1 = new String(passCON.getPassword());
+    String password2 = new String(passSTR.getPassword());
+
+    if (password1.equals(password2)) {
+        PassCON.setText("Passwords Match");
+        PassCON.setForeground(Color.GREEN);
+    } else {
+        PassCON.setText("Passwords Do Not Match");
+        PassCON.setForeground(Color.RED);
+    }
+    }//GEN-LAST:event_PassCONKeyReleased
+
+    private void passCONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passCONActionPerformed
+
+    }//GEN-LAST:event_passCONActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,17 +285,18 @@ public class registration_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PassCON;
+    private javax.swing.JLabel PassSTR;
     private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_register;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel label1;
-    private javax.swing.JLabel label2;
-    private javax.swing.JPasswordField pass1;
-    private javax.swing.JPasswordField pass2;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
+    private javax.swing.JPasswordField passCON;
+    private javax.swing.JPasswordField passSTR;
+    private javax.swing.JTextField userEmail;
+    private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 }
